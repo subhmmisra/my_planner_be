@@ -1,0 +1,74 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django migrations
+**/migrations/
+
+# Local development settings
+local_settings.py
+
+# Secret keys and settings
+.env
+*.env
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.sqlite3
+db.sqlite3
+
+# If your virtualenv is inside your project directory
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# VSCode settings
+.vscode/
+
+# PyCharm settings
+.idea/
+
+# Celery stuff
+celerybeat-schedule
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+
+# Test and coverage results
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Other
+.DS_Store
+*.swp
+*.swo
+
+# macOS specific
+*.DS_Store
+
+# Static and media files
+/static/
+media/
+
+# Ignore all local static and media files if they are generated
+# Comment out if static and media files are version controlled
+#staticfiles/
+#media/
+
+# Ignore node_modules if you're using node
+node_modules/
+
+# If you're using Docker
+docker-compose.override.yml
+.dockerignore
