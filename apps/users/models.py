@@ -4,6 +4,8 @@ from django.contrib.auth.models import (
     AbstractBaseUser,
     BaseUserManager,
     PermissionsMixin,
+    Group,
+    Permission
 )
 from django.contrib.postgres.fields import CIEmailField
 from django.db import models
@@ -74,8 +76,23 @@ class User(AbstractBaseUser, UUIDModel, PermissionsMixin):
 
     phone_number = models.CharField(unique=True, max_length=13, db_index=True)
     address = models.TextField(null=True, blank=True)
+    groups = models.ManyToManyField(
+        Group,
+        related_name="custom_user_groups",  # Custom related name
+        blank=True,
+        help_text="The groups this user belongs to.",
+        verbose_name="groups",
+    )
 
-    USERNAME_FIELD = "phone_number"
+    user_permissions = models.ManyToManyField(
+        Permission,
+        related_name="custom_user_permissions",  # Custom related name
+        blank=True,
+        help_text="Specific permissions for this user.",
+        verbose_name="user permissions",
+    )
+
+    USERNAME_FIELD = "email"
     objects = UserManager()
 
     class Meta:
