@@ -1,0 +1,16 @@
+#project core requiremetns
+asgiref==3.8.1
+Django==5.1.1
+sqlparse==0.5.1
+djangorestframework
+django-filter
+djangorestframework-simplejwt
+celery
+python-dotenv
+psycopg2
+psycopg2-binary
+sendgrid
+django-mail-templated
+django-cors-headers==4.4.0
+setuptools==75.1.0
+drf-yasg==1.21.7
