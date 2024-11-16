@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'apps.base',
+    'apps.stocks',
     'apps.users',
 ]
 
@@ -90,7 +91,7 @@ DATABASES = {
         'USER': os.getenv('DB_USER_NAME'),
         'PASSWORD': os.getenv('DB_PASS'),
         'HOST': os.getenv('DB_HOST', default='127.0.0.1', ),
-        'PORT': '5432',
+        'PORT': "" #'5432',
     }
 }
 
