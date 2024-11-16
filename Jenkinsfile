@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Checking out the code...'
-                git branch: 'main', url: 'https://your-repository-url.git'
+                git branch: 'main', url: 'https://github.com/subhmmisra/my_planner_be.git'
             }
         }
 
@@ -28,37 +28,13 @@ pipeline {
                 script {
                     echo 'Running migrations...'
                     sh '''
-                    source venv/bin/activate
+                    source environment/bin/activate
                     python manage.py migrate
                     '''
                 }
             }
         }
 
-        stage('Collect Static Files') {
-            steps {
-                script {
-                    echo 'Collecting static files...'
-                    sh '''
-                    source venv/bin/activate
-                    python manage.py collectstatic --noinput
-                    '''
-                }
-            }
-        }
-
-        stage('Archive Build') {
-            steps {
-                script {
-                    echo 'Archiving build artifacts...'
-                    sh '''
-                    tar -czf build.tar.gz venv/ myproject/ manage.py
-                    '''
-                    archiveArtifacts artifacts: 'build.tar.gz', fingerprint: true
-                }
-            }
-        }
-    }
 
     post {
         always {
