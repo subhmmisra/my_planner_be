@@ -2,7 +2,7 @@
 # Stacks detected: cicd:jenkins:.,deps:python:.,file:manage.py:.
 version: 2.1
 orbs:
-  python: circleci/python@2
+  python: circleci/python@3
 jobs:
   test-python:
     # Install dependencies and run tests
