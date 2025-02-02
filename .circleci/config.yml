@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  python: circleci/python@5.1.1
+  python: circleci/python@2
 jobs:
   test-python:
     # Install dependencies and run tests
